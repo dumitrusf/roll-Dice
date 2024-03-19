@@ -195,6 +195,7 @@ body {
       font-family: lato-Regular;
       src: url("/assets/fonts/Lato-Regular.ttf") format("truetype");
 
+
       .hold-score {
         margin-top: min(30px, 6vw);
       }
@@ -241,11 +242,81 @@ body {
       -ms-border-radius: 5px;
       -o-border-radius: 5px;
     }
+
     border-radius: min(10px, 5vw);
     -webkit-border-radius: min(10px, 5vw);
     -moz-border-radius: min(10px, 5vw);
     -ms-border-radius: min(10px, 5vw);
     -o-border-radius: min(10px, 5vw);
+  }
+
 }
+
+
+
+@media screen and (min-width: 1280px) {
+
+  body {
+
+    main {
+      position: relative;
+      justify-content: space-between;
+
+
+      .player1,
+      .player2 {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* width: min(150px, 40vw);
+        height: auto; */
+        height: min(550px, 99%);
+        width: min(150px, 40vh);
+
+
+        position: absolute;
+
+
+
+
+
+
+      }
+
+      .player1 {
+        left: 0;
+        top: 0;
+        transform: translate(10vw, 25vh);
+        -webkit-transform: translate(10vw, 25vh);
+        -moz-transform: translate(10vw, 25vh);
+        -ms-transform: translate(10vw, 25vh);
+        -o-transform: translate(10vw, 25vh);
+      }
+
+      .player2 {
+        right: 0;
+        top: 0;
+        transform: translate(-10vw, 25vh);
+        -webkit-transform: translate(-10vw, 25vh);
+        -moz-transform: translate(-10vw, 25vh);
+        -ms-transform: translate(-10vw, 25vh);
+        -o-transform: translate(-10vw, 25vh);
+      }
+
+
+      .actions {
+
+        transform: translatey(min(-300px, 25vh));
+        -webkit-transform: translatey(min(-300px, 25vh));
+        -moz-transform: translatey(min(-300px, 25vh));
+        -ms-transform: translatey(min(-300px, 25vh));
+        -o-transform: translatey(min(-300px, 25vh));
+      }
+    }
+  }
+
+
+
 
 }
