@@ -3,6 +3,9 @@
   <head>
     <!-- basics meta -->
     <meta charset="UTF-8" />
+    <script
+      src="https://kit.fontawesome.com/5c47931233.js"
+      crossorigin="anonymous"></script>
     <meta
       name="description"
       content="A very funny game based on fate, greed and
@@ -20,15 +23,31 @@
     <!-- basics meta -->
 
     <!-- Favicon icon site web -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/assets/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#eb4d4c">
-    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#eb4d4c">
-    <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#000000">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/assets/favicon/safari-pinned-tab.svg"
+      color="#eb4d4c" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#eb4d4c" />
+    <meta
+      name="msapplication-config"
+      content="/assets/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#000000" />
     <!-- Favicon icon site web -->
 
     <!-- installation of Reset, Normalize, Bootstrap and our Styles  -->
@@ -56,70 +75,82 @@
     
     <main>
 
-      <div>
-
-        <span> </span>
-
+      <div class="start-game">
+        <div>
+          <i class="fa-regular fa-circle-xmark fa-rotate-by" style="color: #eb4d4c; --fa-rotate-angle: 45deg;"></i>
+        </div>
+        <span class="title"> NEW GAME </span>
       </div>
 
+      <section class="player1">
 
-      <section>
-        <div>
-          <span> </span>
+        <div class="container-player">
+          <span class="title">PLAYER 1</span>
+          
+           <span class="global-score">43</span>
+          
+          
         </div>
+        
+        
 
-
-        <div>
-          <span> </span>
+        <div class="current-score-container">
+          <span class="current-score-title">CURRENT</span> 
+          <span class="score"> 11 </span>
         </div>
-
-
       </section>
 
+      <div class="container-dice">
 
-      <div>
-
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-
+        <div class="dice">
+          <i class="dot fa-solid fa-circle"></i>
+          <i class="dot fa-solid fa-circle"></i>
+          <i class="dot fa-solid fa-circle"></i>
+          <i class="dot fa-solid fa-circle"></i>
+          <i class="dot fa-solid fa-circle"></i>
+          <i class="dot fa-solid fa-circle"></i>
+          <i class="dot fa-solid fa-circle"></i>
+          <i class="dot fa-solid fa-circle"></i>
+          <i class="dot fa-solid fa-circle"></i>
+        </div>
+        
       </div>
+      
+      
 
+      <div class="actions">
 
-      <div>
-
-        <span> </span>
-
-      </div>
-
-
-      <div>
-
-        <span> </span>
-
-      </div>
-
-
-      <section>
-
-        <div>
-          <span> </span>
+        <div class="roll-dice">
+          <i class="logo fa-solid fa-rotate" style="color: #eb4d4c;"></i>
+          <span class="title"> ROLL DICE </span>
         </div>
 
-
-        <div>
-          <span> </span>
+        <div class="hold-score">
+          <i class="score-logo fa-solid fa-arrow-right-to-bracket fa-rotate-90" style="color: #eb4d4c;"></i>
+          <span class="hold-score__title"> HOLD </span>
         </div>
+        
+      </div>
+      
 
+
+      <section class="player2">
+
+        <div class="container-player">
+          <span class="title">PLAYER 2</span>
+          
+           <span class="global-score">72</span>
+          
+          
+        </div>
+        
+        
+
+        <div class="current-score-container">
+          <span class="current-score-title">CURRENT</span> 
+          <span class="score"> 0 </span>
+        </div>
       </section>
-
-
     </main>
 
     <script src="/js/bootstrap.bundle.js"></script>

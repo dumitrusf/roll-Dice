@@ -1,0 +1,252 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: lato-ThinItalic;
+  src: url("/assets/fonts/Lato-ThinItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: lato-Thin;
+  src: url("/assets/fonts/Lato-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: lato-Regular;
+  src: url("/assets/fonts/Lato-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: lato-LightItalic;
+  src: url("/assets/fonts/Lato-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: lato-Light;
+  src: url("/assets/fonts/Lato-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: lato-Italic;
+  src: url("/assets/fonts/Lato-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: lato-BoldItalic;
+  src: url("/assets/fonts/Lato-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: lato-Bold;
+  src: url("/assets/fonts/Lato-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: lato-BlackItalic;
+  src: url("/assets/fonts/Lato-BlackItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: lato-Black;
+  src: url("/assets/fonts/Lato-Black.ttf") format("truetype");
+}
+
+html {
+  overflow: hidden;
+
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(90% 90% at 50% 50%, rgb(141, 103, 57) 0%, rgb(39, 28.49, 15.77) 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: min(17px, 25vw);
+    width: min(1200px, 95vw);
+    height: 97vh;
+    background: linear-gradient(270deg, #FFF 0%, #FFF 43.72%, #F6F6F6 48.09%, #F6F6F6 48.9%, #F6F6F6 49.81%, #FFF 49.93%, #EAEAEA 50.07%, #EAEAEA 50.63%, #EFEFEF 53.34%, #FFF 67.37%, #FFF 100%);
+
+
+    .start-game {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      height: min(50px, 20vw);
+      margin-top: min(30px, 3vw);
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+
+      >div {
+        font-size: clamp(1.8vw, 1.9rem, 10vw);
+        margin-right: min(8px, 25vw);
+      }
+
+      .title {
+        font-family: Lato-Regular;
+        font-size: clamp(14%, 4vw, 22px);
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+      }
+    }
+
+
+    .player1,
+    .player2 {
+      display: flex;
+      height: min(150px, 40vw);
+      width: min(700px, 99%);
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+      flex-wrap: nowrap;
+      padding: min(10px, 17vw);
+
+      .container-player,
+      .current-score-container {
+        padding: min(20px, 5vw) min(40px, 5vw);
+        display: flex;
+        height: max(auto, 96px);
+        width: min(140px, 150vw);
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+      }
+
+
+
+      .container-player {
+        .title {
+          font-family: Lato-Regular;
+          font-size: clamp(10%, 6vw, 22px);
+          font-style: normal;
+          font-weight: 600;
+          letter-spacing: min(2px, 9vw);
+          text-wrap: nowrap;
+        }
+
+        .global-score {
+          color: #EB4D4C;
+          font-weight: 300;
+          font-family: Lato-Light;
+          font-size: clamp(27%, 15vw, 50px);
+          letter-spacing: min(3px, 10vw);
+        }
+
+      }
+
+      .current-score-container {
+        background-color: #EB4D4C;
+        color: white;
+        height: max(auto, 96px);
+        flex-basis: 140px;
+
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+
+        .current-score-title {
+          color: #FFF;
+          font-family: Lato-Medium;
+          font-size: clamp(30%, 3vw, 13px);
+          font-style: normal;
+          font-weight: 500;
+          letter-spacing: 0.3px;
+        }
+
+        .score {
+          margin-top: calc(clamp(27%, 15vw, 50px) / 2);
+          font-size: clamp(30%, 8vw, 17px);
+          padding-bottom: calc(clamp(27%, 15vw, 50px) / 2);
+        }
+
+      }
+
+    }
+
+    .player2 {
+      margin-bottom: min(30px, 3vw);
+    }
+
+
+    .actions {
+      width: min(150px, 60%);
+      padding: min(10px, 17vw);
+      display: flex;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      font-size: clamp(1.1vw, 1rem, 6vw);
+      font-family: lato-Regular;
+      src: url("/assets/fonts/Lato-Regular.ttf") format("truetype");
+
+      .hold-score {
+        margin-top: min(30px, 6vw);
+      }
+
+    }
+
+    .container-dice {
+      background-color: white;
+      box-shadow: 0px 5px 16.8px 0px rgba(0, 0, 0, 0.20);
+      padding: min(8px, 3vw);
+
+      .dice {
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        width: min(59px, 20vw);
+        height: min(58px, 20vw);
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: auto;
+
+        gap: min(12px, 3vw);
+
+        .dot {
+          font-size: min(4vw, 10px);
+          color: #FFF;
+          /* color: #EB4D4C; */
+
+          &:nth-child(1),
+          &:nth-child(3),
+          &:nth-child(5),
+          &:nth-child(7),
+          &:nth-child(9) {
+            color: #eb4d4c;
+          }
+
+        }
+      }
+
+      flex-basis: min(59px, 2vw);
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+    }
+    border-radius: min(10px, 5vw);
+    -webkit-border-radius: min(10px, 5vw);
+    -moz-border-radius: min(10px, 5vw);
+    -ms-border-radius: min(10px, 5vw);
+    -o-border-radius: min(10px, 5vw);
+}
+
+}
