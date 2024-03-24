@@ -75,7 +75,7 @@
     
     <main>
 
-      <div class="start-game">
+      <div class="start-game" id="startGame">
         <div>
           <i class="fa-regular fa-circle-xmark fa-rotate-by" style="color: #eb4d4c; --fa-rotate-angle: 45deg;"></i>
         </div>
@@ -85,9 +85,9 @@
       <section class="player1">
 
         <div class="container-player">
-          <span class="title">PLAYER 1</span>
+          <span class="title" id="player1Title">PLAYER 1</span>
           
-           <span class="global-score">43</span>
+           <span class="global-score" id="GS1">0</span>
           
           
         </div>
@@ -96,13 +96,13 @@
 
         <div class="current-score-container">
           <span class="current-score-title">CURRENT</span> 
-          <span class="score"> 11 </span>
+          <span class="score" id="CS1"> 0 </span>
         </div>
       </section>
 
       <div class="container-dice">
 
-        <div class="dice">
+        <div class="dice" id="dice">
           <i class="dot fa-solid fa-circle"></i>
           <i class="dot fa-solid fa-circle"></i>
           <i class="dot fa-solid fa-circle"></i>
@@ -120,14 +120,14 @@
 
       <div class="actions">
 
-        <div class="roll-dice">
+        <div class="roll-dice" id="rollDice">
           <i class="logo fa-solid fa-rotate" style="color: #eb4d4c;"></i>
           <span class="title"> ROLL DICE </span>
         </div>
 
-        <div class="hold-score">
+        <div class="hold-score" id="holdScore">
           <i class="score-logo fa-solid fa-arrow-right-to-bracket fa-rotate-90" style="color: #eb4d4c;"></i>
-          <span class="hold-score__title"> HOLD </span>
+          <span class="hold-score-title"> HOLD </span>
         </div>
         
       </div>
@@ -137,9 +137,9 @@
       <section class="player2">
 
         <div class="container-player">
-          <span class="title">PLAYER 2</span>
+          <span class="title" id="player2Title">PLAYER 2</span>
           
-           <span class="global-score">72</span>
+           <span class="global-score" id="GS2">0</span>
           
           
         </div>
@@ -148,7 +148,7 @@
 
         <div class="current-score-container">
           <span class="current-score-title">CURRENT</span> 
-          <span class="score"> 0 </span>
+          <span class="score" id="CS2"> 0 </span>
         </div>
       </section>
     </main>
