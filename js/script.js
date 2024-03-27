@@ -32,16 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // - newGame (by default the dot will be positioned for player 1)
   // - diceDots (if number 1 dot appears lose round and pass to the opponent)
   // - holdScore (if I or he-she-it hold the score, saves the score to global and pass to opponent the round)
-  const player1 = document.querySelector("#player1Title");
 
-  console.log(player1);
-  // 1. Target Player 1 title
+  let player1 = document.querySelector("#player1Title");
 
-  // 2. Target Player 2 title
-  const player2 = document.querySelector("#player2Title");
-
-  console.log(player2);
-  // 2. Target Player 2 title
+  let player2 = document.querySelector("#player2Title");
 
   // 3. Current Score Player1 (CS1/2) will react to=
   //  rollDice, if the dice contains a number bigger than 1 randomly, will achieve it in currentScore1 every time he rolls the dice until gets 1, but we don´t lose our round until we see a 1 in the dot or hold the current score to achieve it in globalScore1/2 (GS1/GS2)
@@ -189,43 +183,42 @@ document.addEventListener("DOMContentLoaded", () => {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
-  };
+  }
 
-  function keepRoundScore() {
-    let roundScore = parseInt(currentScore1.textContent) + randomNumber;
+  function keepRoundScore(cs) {
+    let roundScore = parseInt(cs.textContent) + randomNumber;
 
     if (randomNumber === 1) {
-      roundScore.textContent = 0;
-      currentScore1.textContent = 0;
-      nextPlayer();
+      cs.textContent = "0";
+      return 0;
+    }
 
-      return;
-    };
-
-    currentScore1.textContent = roundScore;
-
+    cs.textContent = roundScore.toString();
     console.log(roundScore);
-
     return roundScore;
-
-    // A cada click de roll dice en keepRoundScore se suma lo anterior
-  };
-
-  function nextPlayer() {
-    console.log("siguiente jugador!!");
-
-    player2.append(dotPlayer);
-  };
+  }
 
   // mini functions
 
   // Main Functions
+  // Función que permite que empiece el juego
   function beginGame() {
+
+    globalScore1.textContent = "0";
+    globalScore2.textContent = "0";
+    currentScore1.textContent = "0";
+    currentScore2.textContent = "0";
+
+    player1.append(dotPlayer);
+
     console.log("Nuevo Juego!");
 
-    location.reload();
-  };
+    console.log(player1);
 
+  };
+  // Función que permite que empiece el juego
+
+  // Función que e genera cara aleatoria al dado y numero aleatorio
   function generateRandomFace() {
     console.log("aquí tiene que generar una cara nueva");
 
@@ -240,22 +233,56 @@ document.addEventListener("DOMContentLoaded", () => {
     keepRoundScore();
   };
 
-  function keepGlobalScore() {
+  // Función que e genera cara aleatoria al dado y numero aleatorio
+
+  // función que guarda los puntos de ronda en el global
+  function keepGlobalScore(cs, gs, player) {
     console.log("Tienes que recuperar los puntos de keepRoundScore GS1/2");
 
-    let mainScore = parseInt(currentScore1.textContent);
+    let mainScore = parseInt(cs.textContent);
 
-    globalScore1.textContent = mainScore;
+    gs.textContent = mainScore;
 
-    currentScore1.textContent = 0;
+    cs.textContent = 0;
 
     // <i class="fa-solid fa-circle" style="color: #eb4d4c;"></i>
 
-    player2.append(dotPlayer);
+    console.log(player2);
 
-    if (mainScore === 0) {
-      
-    };
+    player.append(dotPlayer);
+  };
+  // función que guarda los puntos de rona en el global
+
+  function checkDotPlayerPosition() {
+    if (player1.contains(dotPlayer)) {
+      console.log("El dotPlayer está en el jugador 1");
+      return "player1";
+    } else if (player2.contains(dotPlayer)) {
+      console.log("El dotPlayer está en el jugador 2");
+      return "player2";
+    } else {
+      console.log("El dotPlayer no está en ningún jugador");
+      return "none";
+    }
+  }
+
+  // Luego, basado en el retorno de `checkDotPlayerPosition`, decides qué hacer:
+  const currentPlayer = checkDotPlayerPosition();
+  if (currentPlayer === "player1") {
+    // Aquí puedes llamar a generateRandomFace
+    generateRandomFace();
+    // y keepGlobalScore con los argumentos correctos
+    keepGlobalScore(currentScore1, globalScore1, player1);
+    // Ejemplo:
+    // generateRandomFace();
+    // keepGlobalScore(currentScore1, globalScore1, player1);
+  } else if (currentPlayer === "player2") {
+    // Y aquí para el jugador 2
+    generateRandomFace();
+    // Ejemplo:
+    keepGlobalScore(currentScore1, globalScore1, player2);
+    // generateRandomFace();
+    // keepGlobalScore(currentScore2, globalScore2, player2);
   };
 
   // Main Functions
