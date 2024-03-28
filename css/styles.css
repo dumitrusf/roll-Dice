@@ -72,7 +72,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: min(1200px, 95vw);
-    height: 97vh;
+    height: max(80vh, 90vh);
     background: linear-gradient(270deg, #FFF 0%, #FFF 43.72%, #F6F6F6 48.09%, #F6F6F6 48.9%, #F6F6F6 49.81%, #FFF 49.93%, #EAEAEA 50.07%, #EAEAEA 50.63%, #EFEFEF 53.34%, #FFF 67.37%, #FFF 100%);
 
 
@@ -185,23 +185,22 @@ body {
 
 
     .actions {
-      width: min(150px, 60%);
+      width: calc((min(700px, 99%) / 33.3%));
       padding: min(10px, 17vw);
-      display: flex;
       align-items: center;
       display: flex;
       justify-content: space-between;
       flex-direction: column;
 
-      font-size: clamp(1.1vw, 1rem, 6vw);
+      font-size: clamp(12%, 3vw, 18px);
       font-family: lato-Regular;
       src: url("/assets/fonts/Lato-Regular.ttf") format("truetype");
 
 
-      .roll-dice{
+      .roll-dice {
         cursor: pointer;
       }
-      
+
       .hold-score {
         margin-top: min(30px, 6vw);
         cursor: pointer;
@@ -272,7 +271,8 @@ body {
     main {
       position: relative;
       justify-content: space-between;
-
+      width: min(1200px, 95vw);
+      height: max(80vh, 1200px);
 
       .player1,
       .player2 {
@@ -317,12 +317,11 @@ body {
 
 
       .actions {
-
-        transform: translatey(min(-300px, 25vh));
-        -webkit-transform: translatey(min(-300px, 25vh));
-        -moz-transform: translatey(min(-300px, 25vh));
-        -ms-transform: translatey(min(-300px, 25vh));
-        -o-transform: translatey(min(-300px, 25vh));
+        transform: translateY(min(-300px, 25vh));
+        -webkit-transform: translateY(min(-300px, 25vh));
+        -moz-transform: translateY(min(-300px, 25vh));
+        -ms-transform: translateY(min(-300px, 25vh));
+        -o-transform: translateY(min(-300px, 25vh));
       }
     }
   }

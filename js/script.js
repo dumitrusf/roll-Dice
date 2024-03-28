@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rollDice.addEventListener("click", generateRandomFace);
 
     // Function that generates random faces of the dice
-    holdScore.addEventListener("click", keepGlobalScore);
+    holdScore.addEventListener("click", handleHoldScore);
   }
   // Event Listeners IMPORTANT
 
@@ -188,22 +188,31 @@ document.addEventListener("DOMContentLoaded", () => {
   function keepRoundScore(cs) {
     let roundScore = parseInt(cs.textContent) + randomNumber;
 
-    if (randomNumber === 1) {
-      cs.textContent = "0";
-      return 0;
-    }
+    const currentPlayer = checkDotPlayerPosition();
 
-    cs.textContent = roundScore.toString();
+    if (currentPlayer === "player1" && randomNumber === 1) {
+      cs.textContent = "0";
+      player2.append(dotPlayer);
+      return 0;
+      // Aquí pasas el elemento de puntaje actual de jugador 1
+    };
+    
+    if (currentPlayer === "player2" && randomNumber === 1) {
+      cs.textContent = "0";
+      player1.append(dotPlayer);
+      return 0; // Aquí pasas el elemento de puntaje actual de jugador 2
+    };
+
+    cs.textContent = roundScore;
     console.log(roundScore);
     return roundScore;
-  }
+  };
 
   // mini functions
 
   // Main Functions
   // Función que permite que empiece el juego
   function beginGame() {
-
     globalScore1.textContent = "0";
     globalScore2.textContent = "0";
     currentScore1.textContent = "0";
@@ -214,8 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Nuevo Juego!");
 
     console.log(player1);
-
-  };
+  }
   // Función que permite que empiece el juego
 
   // Función que e genera cara aleatoria al dado y numero aleatorio
@@ -224,14 +232,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     randomNumber = generateRandomInt(1, 7);
 
-    // Call to the generateRandomInt function
-    generateRandomInt();
+    const currentPlayer = checkDotPlayerPosition();
+    if (currentPlayer === "player1") {
+      keepRoundScore(currentScore1); // Aquí pasas el elemento de puntaje actual de jugador 1
+    } else if (currentPlayer === "player2") {
+      keepRoundScore(currentScore2); // Aquí pasas el elemento de puntaje actual de jugador 2
+    }
 
     // llamada a función que muestra numero aleatorio en el  dado
     showDiceFaceGenerated();
-
-    keepRoundScore();
-  };
+  }
 
   // Función que e genera cara aleatoria al dado y numero aleatorio
 
@@ -239,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function keepGlobalScore(cs, gs, player) {
     console.log("Tienes que recuperar los puntos de keepRoundScore GS1/2");
 
-    let mainScore = parseInt(cs.textContent);
+    let mainScore = parseInt(cs.textContent) + parseInt(gs.textContent);
 
     gs.textContent = mainScore;
 
@@ -247,10 +257,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // <i class="fa-solid fa-circle" style="color: #eb4d4c;"></i>
 
-    console.log(player2);
+    console.log(player);
 
     player.append(dotPlayer);
+
+    const currentPlayer = checkDotPlayerPosition();
+
+    if (currentPlayer === "player1" && mainScore >= 100) {
+
+      alert(`player 1 you win!`);
+      currentScore1.textContent = 0;
+      globalScore1.textContent = 0;
+
+    } else if (currentPlayer === "player2" && mainScore >= 100) {
+      alert(`player 2 you win!`); // Asumiendo que player2 es el elemento contenedor del jugador 2
+      currentScore1.textContent = 0;
+      globalScore1.textContent = 0;
+      
+    }
+
   };
+
+  // Asegúrate de que keepGlobalScore se llame solo dentro de una función que maneje la acción de "hold"
+  function handleHoldScore() {
+    const currentPlayer = checkDotPlayerPosition();
+    if (currentPlayer === "player1") {
+      keepGlobalScore(currentScore1, globalScore1, player2);
+       // Asumiendo que player1 es el elemento contenedor del jugador 1
+    } else if (currentPlayer === "player2") {
+      keepGlobalScore(currentScore2, globalScore2, player1); // Asumiendo que player2 es el elemento contenedor del jugador 2
+    }
+  };
+
   // función que guarda los puntos de rona en el global
 
   function checkDotPlayerPosition() {
@@ -264,26 +302,9 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("El dotPlayer no está en ningún jugador");
       return "none";
     }
-  }
-
-  // Luego, basado en el retorno de `checkDotPlayerPosition`, decides qué hacer:
-  const currentPlayer = checkDotPlayerPosition();
-  if (currentPlayer === "player1") {
-    // Aquí puedes llamar a generateRandomFace
-    generateRandomFace();
-    // y keepGlobalScore con los argumentos correctos
-    keepGlobalScore(currentScore1, globalScore1, player1);
-    // Ejemplo:
-    // generateRandomFace();
-    // keepGlobalScore(currentScore1, globalScore1, player1);
-  } else if (currentPlayer === "player2") {
-    // Y aquí para el jugador 2
-    generateRandomFace();
-    // Ejemplo:
-    keepGlobalScore(currentScore1, globalScore1, player2);
-    // generateRandomFace();
-    // keepGlobalScore(currentScore2, globalScore2, player2);
   };
+
+  
 
   // Main Functions
 });
