@@ -266,13 +266,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentPlayer === "player1" && mainScore >= 100) {
 
       alert(`player 1 you win!`);
-      currentScore1.textContent = 0;
-      globalScore1.textContent = 0;
-
+      location.reload();
+      
     } else if (currentPlayer === "player2" && mainScore >= 100) {
       alert(`player 2 you win!`); // Asumiendo que player2 es el elemento contenedor del jugador 2
-      currentScore1.textContent = 0;
-      globalScore1.textContent = 0;
+      location.reload();
       
     }
 
