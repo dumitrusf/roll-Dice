@@ -276,7 +276,6 @@ body {
       position: relative;
       justify-content: space-between;
       width: min(1200px, 95vw);
-      height: max(80vh, 1200px);
 
       .player1,
       .player2 {
@@ -317,17 +316,18 @@ body {
         -moz-transform: translate(-10vw, 25vh);
         -ms-transform: translate(-10vw, 25vh);
         -o-transform: translate(-10vw, 25vh);
-      }
+}
 
 
       .actions {
-        transform: translateY(min(-300px, 25vh));
-        -webkit-transform: translateY(min(-300px, 25vh));
-        -moz-transform: translateY(min(-300px, 25vh));
-        -ms-transform: translateY(min(-300px, 25vh));
-        -o-transform: translateY(min(-300px, 25vh));
-      }
-    }
+        transform: translateY(min(-130px, 50vh));
+        -webkit-transform: translateY(min(-130px, 50vh));
+        -moz-transform: translateY(min(-130px, 50vh));
+        -ms-transform: translateY(min(-130px, 50vh));
+        -o-transform: translateY(min(-130px, 50vh));
+}
+      
+    };
   }
 
 
