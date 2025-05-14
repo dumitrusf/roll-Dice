@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- basics meta -->
+    <meta charset="UTF-8" />
+    <script
+      src="https://kit.fontawesome.com/5c47931233.js"
+      crossorigin="anonymous"></script>
+    <meta
+      name="description"
+      content="A very funny game based on fate, greed and
+    Patience, wins being intelligent, having patience and don't be greedy!" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="keywords"
+      content="roll, dice, rivalry, web game, website game, dice game, 
+    roll dice game, lucky game, luck, patience, greedy, intelligent, fate, rolling, points, current,
+    global, current score, global score, Lucky Roll Dice" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Lucky Roll Dice</title>
+    <!-- basics meta -->
+
+    <!-- Favicon icon site web -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/assets/favicon/safari-pinned-tab.svg"
+      color="#eb4d4c" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#eb4d4c" />
+    <meta
+      name="msapplication-config"
+      content="/assets/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#000000" />
+    <!-- Favicon icon site web -->
+
+    <!-- installation of Reset, Normalize, Bootstrap and our Styles  -->
+
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <!-- Normalize CSS -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <!-- Bootstrap CSS -->
+
+    <!-- reset installed -->
+    <link rel="stylesheet" href="/css/reset.css" />
+    <!-- reset installed -->
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- My CSS -->
+
+    <!-- installation of Reset, Normalize, Bootstrap and our Styles  -->
+  </head>
+  <body>
+
+    
+    <main>
+
+      <div class="start-game" id="startGame">
+        <div type="button" class="btn">
+          <i class="fa-regular fa-circle-xmark fa-rotate-by" style="color: #eb4d4c; --fa-rotate-angle: 45deg;"></i>
+          <span class="title"> NEW GAME </span>
+        </div>
+      </div>
+
+      <section class="player1">
+
+        <div class="container-player player">
+          <span class="title" id="player1Title">PLAYER 1</span>
+          
+           <span class="global-score" id="GS1">0</span>
+          
+          
+        </div>
+        
+        
+
+        <div class="current-score-container">
+          <span class="current-score-title">CURRENT</span> 
+          <span class="score" id="CS1"> 0 </span>
+        </div>
+      </section>
+
+      <div class="container-dice">
+
+        <div class="dice" id="dice">
+          <i class="dot fa-solid fa-circle"></i>
+          <i class="dot fa-solid fa-circle"></i>
+          <i class="dot fa-solid fa-circle"></i>
+          <i class="dot fa-solid fa-circle"></i>
+          <i class="dot fa-solid fa-circle"></i>
+          <i class="dot fa-solid fa-circle"></i>
+          <i class="dot fa-solid fa-circle"></i>
+          <i class="dot fa-solid fa-circle"></i>
+          <i class="dot fa-solid fa-circle"></i>
+        </div>
+        
+      </div>
+      
+      
+
+      <div class="actions">
+
+        <div type="button" class="btn roll-dice" id="rollDice">
+          <i class="logo fa-solid fa-rotate" style="color: #eb4d4c;"></i>
+          <span class="title"> ROLL DICE </span>
+        </div>
+
+        <div type="button" class="btn hold-score" id="holdScore">
+          <i class="score-logo fa-solid fa-arrow-right-to-bracket fa-rotate-90" style="color: #eb4d4c;"></i>
+          <span class="hold-score-title"> HOLD </span>
+        </div>
+        
+      </div>
+      
+
+
+      <section class="player2">
+
+        <div class="container-player player">
+          <span class="title" id="player2Title">PLAYER 2</span>
+          
+          
+           <span class="global-score" id="GS2">0</span>
+          
+          
+        </div>
+        
+        
+
+        <div class="current-score-container">
+          <span class="current-score-title">CURRENT</span> 
+          <span class="score" id="CS2"> 0 </span>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
